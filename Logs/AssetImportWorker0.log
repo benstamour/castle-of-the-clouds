@@ -1,0 +1,287 @@
+Using pre-set license
+Built from '2021.3/staging' branch; Version is '2021.3.14f1 (eee1884e7226) revision 15655304'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19044) 64bit Professional' Language: 'en' Physical Memory: 65342 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.3.14f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/benja/OneDrive/Documents/The Forest
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+58097
+Successfully changed project path to: C:/Users/benja/OneDrive/Documents/The Forest
+C:/Users/benja/OneDrive/Documents/The Forest
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 111.40 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.3.14f1 (eee1884e7226)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/benja/OneDrive/Documents/The Forest/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA Quadro P2000 (ID=0x1cba)
+    Vendor:   NVIDIA
+    VRAM:     4018 MB
+    Driver:   31.0.15.1669
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56776
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.3.14f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.015975 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 103.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.821 seconds
+Domain Reload Profiling:
+	ReloadAssembly (822ms)
+		BeginReloadAssembly (103ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (560ms)
+			LoadAssemblies (100ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (128ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (33ms)
+			SetupLoadedEditorAssemblies (329ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (104ms)
+				BeforeProcessingInitializeOnLoad (2ms)
+				ProcessInitializeOnLoadAttributes (160ms)
+				ProcessInitializeOnLoadMethodAttributes (53ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.013267 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\benja\OneDrive\Documents\The Forest\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\benja\OneDrive\Documents\The Forest\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.365 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1366ms)
+		BeginReloadAssembly (161ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (1050ms)
+			LoadAssemblies (137ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (335ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (60ms)
+			SetupLoadedEditorAssemblies (492ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (9ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (119ms)
+				ProcessInitializeOnLoadAttributes (316ms)
+				ProcessInitializeOnLoadMethodAttributes (34ms)
+				AfterProcessingInitializeOnLoad (12ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (8ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.94 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3884 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 41 unused Assets / (1.4 MB). Loaded Objects now: 4332.
+Memory consumption went from 224.3 MB to 222.9 MB.
+Total: 4.915500 ms (FindLiveObjects: 0.408000 ms CreateObjectMapping: 0.367100 ms MarkObjects: 3.539600 ms  DeleteObjects: 0.599600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:video-codec-MediaFoundation-h265: 746d11721c4dcdbdad8f713fa42b33f4 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 468608.858656 seconds.
+  path: Assets/Chars/Gavaan/Materials/Eyebrows.mat
+  artifactKey: Guid(9d690af6c30468645a8f83b5673d950d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Gavaan/Materials/Eyebrows.mat using Guid(9d690af6c30468645a8f83b5673d950d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '886426d5e4e5a066ebe18506440d7c9a') in 0.188585 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Chars/Gavaan/Materials/Hair.mat
+  artifactKey: Guid(9b8978230c19cf149891c909c387aa72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Gavaan/Materials/Hair.mat using Guid(9b8978230c19cf149891c909c387aa72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db425c7d645c514025a41dd343c8ba9') in 0.012861 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Chars/Gavaan/Materials/Shirt.mat
+  artifactKey: Guid(8c43fb6287b613f41934e273bbe39ee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Gavaan/Materials/Shirt.mat using Guid(8c43fb6287b613f41934e273bbe39ee4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '25aa415e25f528bdf06c1d13905a232d') in 0.029086 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Chars/Gavaan/Materials/Hair 1.mat
+  artifactKey: Guid(283097d169257fb46911b8b16fd0f24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Gavaan/Materials/Hair 1.mat using Guid(283097d169257fb46911b8b16fd0f24f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d72dfed69bb74903d413961b12ca9fb') in 0.254035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 15.651852 seconds.
+  path: Assets/Chars/Aesta/Textures/elvs_hazel_hair_diffuse.png
+  artifactKey: Guid(c65ac0066145e044081c2958c4c70bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Aesta/Textures/elvs_hazel_hair_diffuse.png using Guid(c65ac0066145e044081c2958c4c70bb2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c9ddd9839d2501e1bea5f89fe1b4d01') in 0.028103 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Chars/Aesta/Textures/tightjeans.png
+  artifactKey: Guid(0be43144b1083e94591f10175b1099a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Aesta/Textures/tightjeans.png using Guid(0be43144b1083e94591f10175b1099a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '31969c7cab792746c5a4351e4fdab399') in 0.025909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000088 seconds.
+  path: Assets/Chars/Aesta/Textures/normals.png
+  artifactKey: Guid(d5a53c31bdc5a1847ab0c81dc7bd1147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Aesta/Textures/normals.png using Guid(d5a53c31bdc5a1847ab0c81dc7bd1147) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1b858ed24c44ae8c1cc3f3c78cd33a21') in 0.016072 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Chars/Aesta/Textures/F_Lusekofta_NRM.png
+  artifactKey: Guid(a0db1efb6e960ff46881fc1d97b87712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Aesta/Textures/F_Lusekofta_NRM.png using Guid(a0db1efb6e960ff46881fc1d97b87712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee64445da72510590b1a377729216c6b') in 0.014153 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 3.367822 seconds.
+  path: Assets/Chars/Aesta/Materials/Eyelashes.mat
+  artifactKey: Guid(1780bca1dbfe6b640a8d52ca60fe4792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Aesta/Materials/Eyelashes.mat using Guid(1780bca1dbfe6b640a8d52ca60fe4792) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd433f923f9ec9ed8dbb3d072c4f19e92') in 0.009392 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Chars/Aesta/Materials/Hair.mat
+  artifactKey: Guid(7e4db814add04904f818ad4b53f6b6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/Aesta/Materials/Hair.mat using Guid(7e4db814add04904f818ad4b53f6b6e3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '81a580bcf4ace83adb5084309c2db831') in 0.013975 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 23.692955 seconds.
+  path: Assets/Chars/RuinsChars/elvs_hazel_hair.mat
+  artifactKey: Guid(333decf6ccb6e2e468740f5a17f1e11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/elvs_hazel_hair.mat using Guid(333decf6ccb6e2e468740f5a17f1e11e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44d9a2850ae9ae09bf697209d2d921c8') in 0.017801 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Chars/RuinsChars/eyes-lightblue.mat
+  artifactKey: Guid(56ed55c93bfae33498fdceb77ab69897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/eyes-lightblue.mat using Guid(56ed55c93bfae33498fdceb77ab69897) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5288622a24938cfab2fa64a81e99800b') in 0.012696 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Chars/RuinsChars/female_generic 1.mat
+  artifactKey: Guid(4a707824d99544e42a73412874963e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/female_generic 1.mat using Guid(4a707824d99544e42a73412874963e5a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6c8b1d8d6bf9593ed167ad2e4d0cf01f') in 0.018624 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Chars/RuinsChars/eyebrow012.mat
+  artifactKey: Guid(9a450734dca2202428a493c1e94b0e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/eyebrow012.mat using Guid(9a450734dca2202428a493c1e94b0e28) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3b1964aa7594855ccaf4c3094c003d7') in 0.012747 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Chars/RuinsChars/ruins_xalerieblender3.fbx
+  artifactKey: Guid(760f9367c9cd3554e83872490cddcac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/ruins_xalerieblender3.fbx using Guid(760f9367c9cd3554e83872490cddcac6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3eed94aae26debf1e2c8e67f9d3461b7') in 0.344037 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000074 seconds.
+  path: Assets/Chars/RuinsChars/female_generic.mat
+  artifactKey: Guid(4427799d3c353f94fabc002f760d8c8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/female_generic.mat using Guid(4427799d3c353f94fabc002f760d8c8e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89e67e945814d1f4bd727885418ad4c0') in 0.013042 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000083 seconds.
+  path: Assets/Chars/RuinsChars/ruins_serazblender3.fbx
+  artifactKey: Guid(d15fda81fe750e849860105908d48b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/ruins_serazblender3.fbx using Guid(d15fda81fe750e849860105908d48b43) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd42d7822a1bfe0ce70345ca973fe4979') in 0.204746 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Chars/RuinsChars/eyebrow006.mat
+  artifactKey: Guid(fbe98a777b0ec44479dedd020e463dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/eyebrow006.mat using Guid(fbe98a777b0ec44479dedd020e463dc5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c55925dd1c9a7b580b64b7f5a0207cde') in 0.011387 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Chars/RuinsChars/ruins_aestablender 2.fbx
+  artifactKey: Guid(f4ad90931b1eee9448e70e12df6fcd59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Chars/RuinsChars/ruins_aestablender 2.fbx using Guid(f4ad90931b1eee9448e70e12df6fcd59) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a7c1b0c25a09a71161b497a563408f7') in 0.207998 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 19.762369 seconds.
+  path: Assets/Prefabs/Ruins_Gavaan.prefab
+  artifactKey: Guid(eb51bfe46f155eb489db5fb2a0b5b3b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/Ruins_Gavaan.prefab using Guid(eb51bfe46f155eb489db5fb2a0b5b3b4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f6c8dce63a4fc9f4d38ff85d170d413') in 0.113125 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
