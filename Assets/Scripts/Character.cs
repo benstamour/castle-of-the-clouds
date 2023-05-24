@@ -14,12 +14,13 @@ public class Character : MonoBehaviour
 	private Vector3 playerVelocity;
 	private bool groundedPlayer;
 	private float jumpHeight = 1f;
-	private float gravityValue = -9.81f;
+	public float gravityValue = -9.81f;
 	private float turnSpeed = 1.5f;
 	private Vector3 rotation;
 	[SerializeField] private bool isActive = true; // should the character be allowed to move? (false when player reaches end zone)
 	[SerializeField] private float scaleVal = 1.5f; // different character prefabs have different collider values due to scaling
 	private float multiplier; // scaled height of character relative to scale of 1.5
+	public bool onAirVent = false;
 	
 	// game data
 	private int score = 0; // number of orbs collected
@@ -51,7 +52,7 @@ public class Character : MonoBehaviour
     void Update()
     {
 		groundedPlayer = characterController.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        if(groundedPlayer && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
         }
@@ -72,7 +73,7 @@ public class Character : MonoBehaviour
 			{
 				Debug.Log(AnimPlaying("Idle2").ToString() + AnimPlaying("Walking2").ToString() + AnimPlayingTag("jump").ToString() + animator.GetBool("isJumping").ToString());
 			}*/
-			if (Input.GetButton("Jump") && groundedPlayer)// && !animator.GetBool("isJumping"))// && !(animator.IsInTransition(0) && AnimPlaying("Jumping")))
+			if(Input.GetButton("Jump") && groundedPlayer)// && !animator.GetBool("isJumping"))// && !(animator.IsInTransition(0) && AnimPlaying("Jumping")))
 			{
 				playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
 				
@@ -169,6 +170,10 @@ public class Character : MonoBehaviour
 				StartCoroutine(ChangeCharController(1));
 				//this.characterController.height = 1f;
 				//this.characterController.center = new Vector3(0f, 1f, 0f);
+			}
+			if(onAirVent)
+			{
+				playerVelocity = Vector3.zero;
 			}
 			characterController.Move(playerVelocity*Time.deltaTime);
 		}
