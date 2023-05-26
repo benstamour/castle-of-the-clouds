@@ -13,80 +13,92 @@ public class AirVent : MonoBehaviour
 	private bool pauseForce = false;
 	//Coroutine curCoroutine;
 	int numCoroutines = 0;
+	private bool on = true;
+	private ParticleSystem wind;
 	
-    // Start is called before the first frame update
-    void Start()
+	void Awake()
     {
-        //wind = GetComponent<ParticleSystem>();
+        this.wind = GetComponent<ParticleSystem>();
 		//collisionEvents = new List<ParticleCollisionEvent>();
     }
+	
+    // Start is called before the first frame update
+    /*void Start()
+    {
+        this.wind = GetComponent<ParticleSystem>();
+		//collisionEvents = new List<ParticleCollisionEvent>();
+    }*/
 
     // Update is called once per frame
     void Update()
     {
-		RaycastHit hitInfo;
-        Physics.Linecast(
-			gameObject.transform.position,
-			gameObject.transform.position + gameObject.transform.forward*this.maxRayDistance,
-			out hitInfo,
-			//m_currentProperties.m_layerMask
-			~0
-		);
-		Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward*this.maxRayDistance, Color.cyan, 200);
-
-		if(hitInfo.collider)
+		//Debug.Log(this.on);
+		if(this.on == true)
 		{
-			//gameObject.lineRenderer.SetPosition(1, hitInfo3D.point);
+			RaycastHit hitInfo;
+			Physics.Linecast(
+				gameObject.transform.position,
+				gameObject.transform.position + gameObject.transform.forward*this.maxRayDistance,
+				out hitInfo,
+				//m_currentProperties.m_layerMask
+				~0
+			);
+			//Debug.DrawRay(gameObject.transform.position, gameObject.transform.forward*this.maxRayDistance, Color.cyan, 200);
 
-			if(hitInfo.collider.gameObject.tag == "Character")
+			if(hitInfo.collider)
 			{
-				GameObject character = hitInfo.collider.gameObject;
-				//Debug.Log(gameObject.name);
-				float distance = hitInfo.distance; //hitInfo3D.collider.gameObject.transform.position.z - gameObject.transform.position.z;
-				//Debug.Log(distance);
-				Vector3 force = Vector3.zero;
-				if(gameObject.transform.forward.y > 0.8)
+				//gameObject.lineRenderer.SetPosition(1, hitInfo3D.point);
+
+				if(hitInfo.collider.gameObject.tag == "Character")
 				{
-					distance = character.transform.position.y - gameObject.transform.position.y + this.ventBuffer;
-					if(this.pauseForce == false)
+					GameObject character = hitInfo.collider.gameObject;
+					//Debug.Log(gameObject.name);
+					float distance = hitInfo.distance; //hitInfo3D.collider.gameObject.transform.position.z - gameObject.transform.position.z;
+					//Debug.Log(distance);
+					Vector3 force = Vector3.zero;
+					if(gameObject.transform.forward.y > 0.8)
 					{
-						if(this.numCoroutines == 0)
+						distance = character.transform.position.y - gameObject.transform.position.y + this.ventBuffer;
+						if(this.pauseForce == false)
 						{
-							StartCoroutine(disableGravity(character));
-						}
-						if(distance < maxRayDistance*0.95)
-						{
-							if(distance >= 0)
+							if(this.numCoroutines == 0)
 							{
-								force = gameObject.transform.forward*Mathf.Min(10, this.windForce/(distance+0.001f));
-								//force = new Vector3(0,0,Mathf.Max(10, distance*this.windForce/(distance+0.001f)));
-								this.lastUpforce = Time.time;
+								StartCoroutine(disableGravity(character));
 							}
-							else
+							if(distance < maxRayDistance*0.95)
 							{
-								force = gameObject.transform.forward*Mathf.Max(-10, this.windForce/(distance+0.001f));
-								//force = new Vector3(0,0,Mathf.Min(-10, distance*this.windForce/(distance+0.001f)));
-								this.lastUpforce = Time.time;
+								if(distance >= 0)
+								{
+									force = gameObject.transform.forward*Mathf.Min(10, this.windForce/(distance+0.001f));
+									//force = new Vector3(0,0,Mathf.Max(10, distance*this.windForce/(distance+0.001f)));
+									this.lastUpforce = Time.time;
+								}
+								else
+								{
+									force = gameObject.transform.forward*Mathf.Max(-10, this.windForce/(distance+0.001f));
+									//force = new Vector3(0,0,Mathf.Min(-10, distance*this.windForce/(distance+0.001f)));
+									this.lastUpforce = Time.time;
+								}
 							}
 						}
-					}
-				}
-				else
-				{
-					if(distance > 0)
-					{
-						force = gameObject.transform.forward*Mathf.Min(10, this.windForce/(distance+0.001f));
-						//force = new Vector3(0,0,Mathf.Max(10, distance*this.windForce/(distance+0.001f)));
 					}
 					else
 					{
-						force = gameObject.transform.forward*Mathf.Max(-10, this.windForce/(distance+0.001f));
-						//force = new Vector3(0,0,Mathf.Min(-10, distance*this.windForce/(distance+0.001f)));
+						if(distance > 0)
+						{
+							force = gameObject.transform.forward*Mathf.Min(10, this.windForce/(distance+0.001f));
+							//force = new Vector3(0,0,Mathf.Max(10, distance*this.windForce/(distance+0.001f)));
+						}
+						else
+						{
+							force = gameObject.transform.forward*Mathf.Max(-10, this.windForce/(distance+0.001f));
+							//force = new Vector3(0,0,Mathf.Min(-10, distance*this.windForce/(distance+0.001f)));
+						}
 					}
+					CharacterController characterController = character.GetComponent<CharacterController>();
+					//Debug.Log(characterController.velocity);
+					characterController.Move(force*Time.deltaTime);
 				}
-				CharacterController characterController = character.GetComponent<CharacterController>();
-				Debug.Log(characterController.velocity);
-				characterController.Move(force*Time.deltaTime);
 			}
 		}
     }
@@ -101,6 +113,11 @@ public class AirVent : MonoBehaviour
 		//charController.velocity = 0;
 		while(true)
 		{
+			if(this.on == false)
+			{
+				break;
+			}
+			
 			RaycastHit hitInfo;
 			Physics.Linecast(
 				gameObject.transform.position,
@@ -131,6 +148,24 @@ public class AirVent : MonoBehaviour
 		charScript.gravityValue = -9.81f;
 		charScript.onAirVent = false;
 		this.numCoroutines--;
+	}
+	
+	public void toggleVent()
+	{
+		this.on = !this.on;
+		if(this.on)
+		{
+			wind.Play();
+		}
+		else
+		{
+			wind.Stop();
+		}
+	}
+	
+	public bool getVentStatus()
+	{
+		return this.on;
 	}
 	
 	

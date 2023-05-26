@@ -42,7 +42,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 112396, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
       propertyPath: m_Name
-      value: Air Vent (3)
+      value: Air Vent
       objectReference: {fileID: 0}
     - target: {fileID: 191024, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
       propertyPath: m_IsActive
@@ -333,6 +333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxRayDistance: 5
   windForce: 5
+  ventBuffer: 0.2
 --- !u!4 &1174476982487844476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 461792, guid: b5ea624fac4bcb44f96ad51d3745727e, type: 3}
