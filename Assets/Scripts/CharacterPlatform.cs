@@ -10,29 +10,23 @@ public class CharacterPlatform : MonoBehaviour
     {
         
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 	
-	void FixedUpdate()
+	void Update()
 	{
 		RaycastHit hit;
 		if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
 		{
-			// character should follow moving tiles when they are on top of them
-			if((hit.collider.gameObject.tag == "RisingTile") && hit.distance <= 0.1)
-			{
-				gameObject.transform.parent = hit.collider.gameObject.transform;
-			}
-			else if(hit.collider.gameObject.name == "Cylinder" && hit.distance <= 0.5)
+			if(hit.collider.gameObject.name == "Cylinder" && hit.distance <= 0.5)
 			{
 				CharacterController characterController = gameObject.GetComponent<CharacterController>();
 				Vector3 slide = new Vector3(0, 0, -1f);
 				characterController.Move(slide*Time.fixedDeltaTime);
 			}
+			/*else if(hit.collider.gameObject.tag == "OrbitingTile" && hit.distance <= 0.1)
+			{
+				gameObject.transform.parent = hit.collider.gameObject.transform;
+				Debug.Log("Gavaan: " + gameObject.transform.position);
+			}*/
 			/*else
 			{
 				gameObject.transform.parent = null;
