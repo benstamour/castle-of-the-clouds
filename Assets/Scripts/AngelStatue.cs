@@ -8,7 +8,7 @@ public class AngelStatue : MonoBehaviour
 	private bool angelTriggered = false;
 	private float progress = 0f;
 	private float progressEyes = 0f;
-	private float duration = 10f;
+	private float duration = 5f;
 	private GameObject character;
 	public Material eyeMaterial;
 	private int stage = 0;

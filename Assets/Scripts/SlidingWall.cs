@@ -17,8 +17,8 @@ public class SlidingWall : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.dir0 = new Vector3(-this.distance, 0, 0);
-		this.dir1 = new Vector3(this.distance, 0, 0);
+        this.dir0 = new Vector3(0, 0, -this.distance);
+		this.dir1 = new Vector3(0, 0, this.distance);
 		this.startPos = gameObject.transform.position;
     }
 

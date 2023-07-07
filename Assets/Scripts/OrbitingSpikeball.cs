@@ -5,7 +5,7 @@ using UnityEngine;
 public class OrbitingSpikeball : MonoBehaviour
 {
 	[SerializeField] public float orbitSpeed = -50f;
-	[SerializeField] public Vector3 orbitAround = new Vector3(5f, 9.5f, 24.5f);
+	[SerializeField] public Vector3 orbitAround = new Vector3(-49.5f, 12f, 14.75f);
 	[SerializeField] public float tiltSpeed = 80f;
 	private float totalRotation = 0;
 	

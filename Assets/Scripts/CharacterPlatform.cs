@@ -19,7 +19,7 @@ public class CharacterPlatform : MonoBehaviour
 			if(hit.collider.gameObject.name == "Cylinder" && hit.distance <= 0.5)
 			{
 				CharacterController characterController = gameObject.GetComponent<CharacterController>();
-				Vector3 slide = new Vector3(0, 0, -1f);
+				Vector3 slide = new Vector3(1f, 0, 0);
 				characterController.Move(slide*Time.fixedDeltaTime);
 			}
 			/*else if(hit.collider.gameObject.tag == "OrbitingTile" && hit.distance <= 0.1)
