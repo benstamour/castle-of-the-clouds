@@ -14,13 +14,14 @@ public class CharacterPlatform : MonoBehaviour
 	void Update()
 	{
 		RaycastHit hit;
-		if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, Mathf.Infinity))
+		if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.down), out hit, 0.5f))//Mathf.Infinity))
 		{
-			if(hit.collider.gameObject.name == "Cylinder" && hit.distance <= 0.5)
+			if(hit.collider.gameObject.name == "Cylinder" && hit.distance <= 0.5f)
 			{
 				CharacterController characterController = gameObject.GetComponent<CharacterController>();
-				Vector3 slide = new Vector3(1f, 0, 0);
-				characterController.Move(slide*Time.fixedDeltaTime);
+				Vector3 slide = new Vector3(1.75f, -0.981f, 0);
+				characterController.Move(slide*Time.deltaTime);
+				//characterController.Move(Physics.gravity*Time.deltaTime);
 			}
 			/*else if(hit.collider.gameObject.tag == "OrbitingTile" && hit.distance <= 0.1)
 			{

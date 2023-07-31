@@ -14,7 +14,9 @@ public class KillPlayer : MonoBehaviour
 	
 	public void Respawn()
 	{
-		SceneManager.LoadScene("Arena");
+		//SceneManager.LoadScene("Arena");
+		string curscene = SceneManager.GetActiveScene().name;
+		SceneManager.LoadScene(curscene);
 	}
 
 	// when player gets killed, reload the level
