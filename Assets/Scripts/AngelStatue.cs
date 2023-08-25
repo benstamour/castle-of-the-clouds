@@ -11,6 +11,7 @@ public class AngelStatue : MonoBehaviour
 	private float duration = 5f;
 	private GameObject character;
 	public Material eyeMaterial;
+	public Material fogBarrierMaterial;
 	private int stage = 0;
 	private float time = 0f;
 	
@@ -20,6 +21,7 @@ public class AngelStatue : MonoBehaviour
         this.character = GameObject.FindWithTag("Character");
 		eyeMaterial.SetFloat("_Translucency", 0);
 		eyeMaterial.SetFloat("_EmissionPower", 0);
+		fogBarrierMaterial.SetFloat("_Density", 0);
     }
 
     // Update is called once per frame
@@ -114,5 +116,19 @@ public class AngelStatue : MonoBehaviour
 	{
 		this.angelTriggered = true;
 		eyeMaterial.SetFloat("_Translucency", 15);
+		StartCoroutine(disperseFog());
+	}
+	
+	IEnumerator disperseFog()
+	{
+		float density = fogBarrierMaterial.GetFloat("_Density");
+		while(density < 2)
+		{
+			density += Time.deltaTime;
+			fogBarrierMaterial.SetFloat("_Density", density);
+			yield return null;
+		}
+		Collider fogCollider = GameObject.Find("Fog Barrier").GetComponent<Collider>();
+		fogCollider.enabled = false;
 	}
 }
