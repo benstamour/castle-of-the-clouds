@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
 	private int numAttempts = 0; // total number of attempts taken
 	private string character = "";
 	
-	private int spawnPoint = -1; // save point that character should spawn at; -1 for beginning location
-	private float spawnRot = 0; // rotation of player when spawning
+	[SerializeField] private int spawnPoint = -1; // save point that character should spawn at; -1 for beginning location
+	[SerializeField] private float spawnRot = 0; // rotation of player when spawning
 	
 	public AudioClip menuSoundtrack;
 	public AudioClip arenaSoundtrack;
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
 	public void addSavePointTime(float time)
 	{
 		this.savePointTime = this.savePointTime + time;
+		Debug.Log(this.savePointTime);
 	}
 	public void setSavePointTime(float time)
 	{
@@ -232,7 +233,7 @@ public class GameManager : MonoBehaviour
 	public void addSavePointScore(int num)
 	{
 		this.score += num;
-		//Debug.Log(num.ToString() + " " + this.score.ToString());
+		Debug.Log(num.ToString() + " " + this.score.ToString());
 	}
 	
 	IEnumerator CheckArenaLoaded()

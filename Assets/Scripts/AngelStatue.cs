@@ -18,7 +18,6 @@ public class AngelStatue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        this.character = GameObject.FindWithTag("Character");
 		eyeMaterial.SetFloat("_Translucency", 0);
 		eyeMaterial.SetFloat("_EmissionPower", 0);
 		fogBarrierMaterial.SetFloat("_Density", 0);
@@ -27,7 +26,8 @@ public class AngelStatue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		float distance = Vector3.Distance(transform.position, character.transform.position);
+		this.character = GameObject.FindWithTag("Character");
+		float distance = Vector3.Distance(transform.position, this.character.transform.position);
         if(this.angelTriggered && distance <= 50)
 		{
 			if(this.stage == 0)

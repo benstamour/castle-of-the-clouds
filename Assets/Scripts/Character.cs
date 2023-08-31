@@ -23,8 +23,8 @@ public class Character : MonoBehaviour
 	public bool onAirVent = false;
 	
 	// game data
-	private int score = 0; // number of orbs collected
-	private float startTime;
+	private int score = 0; // number of orbs collected since last save point
+	private float startTime; // time passed since last save point
 	private GameManager gameManagerScript;
 	
 	// data for animations
@@ -195,6 +195,7 @@ public class Character : MonoBehaviour
 			// save time and score data
 			this.gameManagerScript.addSavePointTime(Time.time - this.startTime);
 			this.gameManagerScript.addSavePointScore(this.score);
+			this.score = 0;
 			this.startTime = Time.time;
 		}
 	}
@@ -203,7 +204,6 @@ public class Character : MonoBehaviour
 	private void EndZone()
 	{
 		this.isActive = false;
-		float totalTime = Time.time - this.startTime;
 		
 		// if save points are enabled, add score and time from this run to saved data
 		if(gameManagerScript.getSavePointsEnabled())
@@ -215,6 +215,7 @@ public class Character : MonoBehaviour
 		}
 		else
 		{
+			float totalTime = Time.time - this.startTime;
 			this.gameManagerScript.setScore(this.score);
 			this.gameManagerScript.setTime(totalTime);
 		}

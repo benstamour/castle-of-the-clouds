@@ -9,6 +9,8 @@ public class SavePoint : MonoBehaviour
 	[SerializeField] private float yRot; // rotation of character when spawning at save point location
 	private GameManager gameManagerScript;
 	private ArenaManager arenaManagerScript;
+	private int rotation = 0;
+	private float sum = 0;
 	
     // Start is called before the first frame update
     void Start()
@@ -20,7 +22,32 @@ public class SavePoint : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+		
+	}
+	
+	void FixedUpdate()
+	{
+        // handles rotation of the orb; repeats a sequence of two slow rotations followed by two fast rotations
+		if(this.rotation == 0)
+		{
+			this.transform.parent.Rotate(15*Time.fixedDeltaTime,60*Time.fixedDeltaTime,15*Time.fixedDeltaTime, Space.World);
+			this.sum += 60*Time.fixedDeltaTime;
+			if(this.sum >= 720)
+			{
+				this.rotation = 1;
+				this.sum = 0;
+			}
+		}
+		else
+		{
+			this.transform.parent.Rotate(45*Time.fixedDeltaTime,180*Time.fixedDeltaTime,45*Time.fixedDeltaTime, Space.World);
+			this.sum += 180*Time.fixedDeltaTime;
+			if(this.sum >= 720)
+			{
+				this.rotation = 0;
+				this.sum = 0;
+			}
+		}
     }
 	
 	// when character collides with save point, set new spawn point

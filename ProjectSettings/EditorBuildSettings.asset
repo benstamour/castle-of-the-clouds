@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Start Screen.unity
+    guid: 87562d0e9f5ce2c4a9ccd8da4f988f55
+  - enabled: 1
+    path: Assets/Scenes/Air Arena.unity
+    guid: ad97d6f0bf62e174fa79bd834bb1009d
+  - enabled: 1
+    path: Assets/Scenes/Controls Screen.unity
+    guid: 0c2f7fcca236fd946a92b2d08c020351
+  - enabled: 1
+    path: Assets/Scenes/End Screen.unity
+    guid: 570557140e845c9478406d23153f7e90
+  - enabled: 1
+    path: Assets/Scenes/Instructions Screen.unity
+    guid: a08d4e56789e95342bda18afb3ca099a
+  - enabled: 1
+    path: Assets/Scenes/Settings Screen.unity
+    guid: 2252bda075a2330438eec55c18661413
   m_configObjects: {}

@@ -9,6 +9,8 @@ TagManager:
   - OrbitingTile
   - Target
   - Collectible
+  - SavePoint
+  - EndZone
   layers:
   - Default
   - TransparentFX

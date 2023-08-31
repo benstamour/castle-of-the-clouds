@@ -27,13 +27,14 @@ public class ArenaManager : MonoBehaviour
 	[SerializeField] private float testZ;
 	[SerializeField] private float testRot;
 	
-	public GameObject[] savePoints = new GameObject[4]; // save point array
+	public GameObject[] savePoints = new GameObject[6]; // save point array
+	public GameObject[] orbs = new GameObject[6]; // orb array
+	private bool[] orbsCollected = new bool[6]; // which orbs are collected by the player?
 	
 	public Canvas pauseScreen; // pause screen
 	private bool paused = false; // is the game paused?
 	
-	public int curOrbID = 0; // for instantiating orbs to ensure each has unique ID
-	private bool[] orbsCollected = new bool[6]; // which orbs are collected by the player?
+	//public int curOrbID = 0; // for instantiating orbs to ensure each has unique ID
 	
     // Start is called before the first frame update
     void Start()
@@ -60,12 +61,12 @@ public class ArenaManager : MonoBehaviour
 			if(useTestLoc)
 			{
 				startLoc = new Vector3(testX, testY, testZ);
-				yRot = startRot;
+				yRot = testRot;
 			}
 			else
 			{
 				startLoc = new Vector3(startX, startY, startZ);
-				yRot = testRot;
+				yRot = startRot;
 			}
 			
 			if(gameManagerScript.getSavePointsEnabled() == false) // if save points are turned off, remove them
@@ -107,34 +108,36 @@ public class ArenaManager : MonoBehaviour
 		}
 		
 		// instantiates chosen character at starting location
+		GameObject charPrefab;
 		switch(this.character)
 		{
 			case "Seraz":
 			{
-				Instantiate(serazPrefab, startLoc, Quaternion.Euler(0,yRot,0));
+				charPrefab = serazPrefab;
 				break;
 			}
 			case "Aesta":
 			{
-				Instantiate(aestaPrefab, startLoc, Quaternion.Euler(0,yRot,0));
+				charPrefab = aestaPrefab;
 				break;
 			}
 			case "Gavaan":
 			{
-				Instantiate(gavaanPrefab, startLoc, Quaternion.Euler(0,yRot,0));
+				charPrefab = gavaanPrefab;
 				break;
 			}
 			case "Xalerie":
 			{
-				Instantiate(xaleriePrefab, startLoc, Quaternion.Euler(0,yRot,0));
+				charPrefab = xaleriePrefab;
 				break;
 			}
 			default:
 			{
-				Instantiate(gavaanPrefab, startLoc, Quaternion.Euler(0,yRot,0));
+				charPrefab = gavaanPrefab;
 				break;
 			}
 		}
+		Instantiate(charPrefab, startLoc, Quaternion.Euler(0,yRot,0));
     }
 
     // Update is called once per frame
@@ -168,11 +171,11 @@ public class ArenaManager : MonoBehaviour
 	}
 	
 	// ensures each orb ID is unique
-	public void incrementCurOrbID()
+	/*public void incrementCurOrbID()
 	{
 		//Debug.Log(this.curOrbID);
 		this.curOrbID++;
-	}
+	}*/
 	
 	// get/set info on which orbs are collected
 	public bool[] getOrbsCollected()
