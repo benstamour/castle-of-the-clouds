@@ -8,7 +8,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 	private int score = 0; // number of orbs collected
-	private float timeTaken = 0f; // total time taken in successful run
+	private float gameStartTime = 0f; // time when gameplay begins
+	private float gameTotalTime = 0f; // total time taken during game (incl. player deaths)
+	//private float timeTaken = 0f; // total time taken in successful run
 	private float savePointTime = 0f; // cumulative time to get to each save point and the end zone; does not include time beyond save points that resulted in character being killed
 	private int numAttempts = 0; // total number of attempts taken
 	private string character = "";
@@ -18,13 +20,18 @@ public class GameManager : MonoBehaviour
 	
 	public AudioClip menuSoundtrack;
 	public AudioClip arenaSoundtrack;
+	public AudioClip flyingTreeSoundtrack;
+	public AudioClip angelStatueSoundtrack;
 	public AudioClip buttonClip;
 	public AudioClip orbClip;
 	public AudioClip leverClip;
+	public AudioClip endZoneClip;
 	
 	public AudioSource audioSource1;
 	public AudioSource audioSource2;
 	private bool volume = true; // is music/sound on or off?
+	
+	private int curArenaMusic = 0; // which arena track is currently playing?
 	
 	private bool savePoints = true; // are save points enabled or disabled?
 	private bool[] orbsCollected = new bool[6]; // bool for whether each orb has been collected
@@ -32,7 +39,7 @@ public class GameManager : MonoBehaviour
 	void Awake()
 	{
 		DontDestroyOnLoad(transform.gameObject);
-		//this.LoadStartScreen();
+		this.LoadStartScreen();
 	}
 	
     // Start is called before the first frame update
@@ -61,13 +68,17 @@ public class GameManager : MonoBehaviour
 		return this.score;
 	}
 	
-	public void setTime(float time)
+	/*public void setTime(float time)
 	{
 		this.timeTaken = time;
 	}
 	public float getTime()
 	{
 		return this.timeTaken;
+	}*/
+	public float getTotalTime()
+	{
+		return this.gameTotalTime;
 	}
 	public void addSavePointTime(float time)
 	{
@@ -102,11 +113,13 @@ public class GameManager : MonoBehaviour
 	
 	public void LoadStartScreen()
 	{
-		SceneManager.LoadScene("StartScreen");
+		SceneManager.LoadScene("Start Screen");
 		
 		// reset variables
 		this.score = 0;
-		this.timeTaken = 0f;
+		//this.timeTaken = 0f;
+		this.gameStartTime = 0f;
+		this.gameTotalTime = 0f;
 		this.savePointTime = 0f;
 		this.numAttempts = 0;
 		this.spawnPoint = -1;
@@ -123,7 +136,7 @@ public class GameManager : MonoBehaviour
 	
 	public void StartGame()
 	{
-		SceneManager.LoadScene("Arena");
+		SceneManager.LoadScene("Air Arena");
 		
 		// play arena soundtrack
 		StartCoroutine(CheckArenaLoaded());
@@ -136,7 +149,14 @@ public class GameManager : MonoBehaviour
 	
 	public void EndZone()
 	{
-		SceneManager.LoadScene("EndScreen");
+		this.gameTotalTime = Time.time - this.gameStartTime;
+		SceneManager.LoadScene("End Screen");
+		
+		AudioSource audioSource = this.audioSource1;
+		audioSource.Stop();
+		audioSource.clip = endZoneClip;
+		audioSource.loop = false;
+		audioSource.Play();
 	}
 	
 	public void incrementAttempts()
@@ -240,7 +260,7 @@ public class GameManager : MonoBehaviour
 	{
 		while(true)
 		{
-			if(SceneManager.GetActiveScene().name == "Arena")
+			if(SceneManager.GetActiveScene().name == "Air Arena")
 			{
 				// play arena soundtrack
 				AudioSource audioSource = this.audioSource1;
@@ -248,6 +268,7 @@ public class GameManager : MonoBehaviour
 				audioSource.clip = arenaSoundtrack;
 				audioSource.loop = true;
 				audioSource.Play();
+				this.curArenaMusic = 0;
 				break;
 			}
 			else
@@ -255,5 +276,47 @@ public class GameManager : MonoBehaviour
 				yield return null;
 			}
 		}
+		this.gameStartTime = Time.time;
+	}
+	
+	public void triggerMainArenaMusic()
+	{
+		if(this.curArenaMusic != 0)
+		{
+			AudioSource audioSource = this.audioSource1;
+			audioSource.Stop();
+			audioSource.clip = arenaSoundtrack;
+			audioSource.loop = true;
+			audioSource.Play();
+			this.curArenaMusic = 0;
+		}
+	}
+	public void triggerTreeMusic()
+	{
+		if(this.curArenaMusic != 1)
+		{
+			AudioSource audioSource = this.audioSource1;
+			audioSource.Stop();
+			audioSource.clip = flyingTreeSoundtrack;
+			audioSource.loop = true;
+			audioSource.Play();
+			this.curArenaMusic = 1;
+		}
+	}
+	public void triggerAngelMusic()
+	{
+		if(this.curArenaMusic != 2)
+		{
+			AudioSource audioSource = this.audioSource1;
+			audioSource.Stop();
+			audioSource.clip = angelStatueSoundtrack;
+			audioSource.loop = true;
+			audioSource.Play();
+			this.curArenaMusic = 2;
+		}
+	}
+	public int getCurArenaMusic()
+	{
+		return this.curArenaMusic;
 	}
 }

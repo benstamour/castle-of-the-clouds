@@ -217,7 +217,7 @@ public class Character : MonoBehaviour
 		{
 			float totalTime = Time.time - this.startTime;
 			this.gameManagerScript.setScore(this.score);
-			this.gameManagerScript.setTime(totalTime);
+			//this.gameManagerScript.setTime(totalTime);
 		}
 		
 		//SceneManager.LoadScene("EndScreen");

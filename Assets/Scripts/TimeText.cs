@@ -17,16 +17,18 @@ public class TimeText : MonoBehaviour
     void Start()
     {
         this.gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
-		if(this.gameManagerScript.getSavePointsEnabled())
+		/*if(this.gameManagerScript.getSavePointsEnabled())
 		{
 			this.time = gameManagerScript.getSavePointTime();
 			UpdateText(this.time);
 		}
 		else
 		{
-			this.time = gameManagerScript.getTime();
+			this.time = gameManagerScript.getTotalTime();
 			UpdateText(this.time);
-		}
+		}*/
+		this.time = gameManagerScript.getTotalTime();
+		UpdateText(this.time);
     }
 
     // Update is called once per frame

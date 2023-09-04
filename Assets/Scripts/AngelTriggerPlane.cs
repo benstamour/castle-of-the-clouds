@@ -6,11 +6,13 @@ public class AngelTriggerPlane : MonoBehaviour
 {
 	public GameObject angel;
 	bool triggered = false;
+	GameManager gameManagerScript;
 	
     // Start is called before the first frame update
     void Start()
     {
         this.angel = GameObject.Find("angelStatue");
+		this.gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class AngelTriggerPlane : MonoBehaviour
 			this.triggered = true;
 			AngelStatue angelStatueScript = this.angel.GetComponent<AngelStatue>();
 			angelStatueScript.triggerAngel();
+			this.gameManagerScript.triggerAngelMusic();
 		}
 	}
 }

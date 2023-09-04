@@ -25,14 +25,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779822268857443574}
-  m_LocalRotation: {x: 0.17364816, y: -0, z: 0.000000014901159, w: 0.9848078}
+  m_LocalRotation: {x: 0.10452846, y: 0, z: 0, w: 0.9945219}
   m_LocalPosition: {x: 0, y: 1.8461536, z: -1.8461537}
   m_LocalScale: {x: 0.4615384, y: 0.4615384, z: 0.46153843}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2317384564364647228}
   m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12, y: 0, z: 0}
 --- !u!20 &5681680146902321284
 Camera:
   m_ObjectHideFlags: 0
@@ -58,7 +58,7 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -5295,15 +5295,27 @@ PrefabInstance:
     - target: {fileID: -6948422945149759952, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 469e4a0642b7ccb48a764d236c24b835, type: 2}
+      objectReference: {fileID: 2100000, guid: ad37e2379a62b334fa9f12b34f0e0687, type: 2}
     - target: {fileID: -6199362189815847880, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 333decf6ccb6e2e468740f5a17f1e11e, type: 2}
+    - target: {fileID: -6139892879017213066, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f9e256410e11c64486e3a85e69a1473, type: 2}
     - target: {fileID: -5808569527584735643, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fdd28fc474fa6b742a018682c166ec84, type: 2}
+    - target: {fileID: -5262144704365572295, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 4f31c3e643cd02540892203547361f38, type: 2}
+    - target: {fileID: 854912033467237039, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0bbe5a83b90dc5a4e8703e4043dabdc3, type: 2}
     - target: {fileID: 919132149155446097, guid: f4ad90931b1eee9448e70e12df6fcd59, type: 3}
       propertyPath: m_Name
       value: ruins_aestablender 2

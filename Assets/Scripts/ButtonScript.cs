@@ -29,13 +29,14 @@ public class ButtonScript : MonoBehaviour
 	public void LoadCharSelection()
 	{
 		this.gameManagerScript.PlayButtonClip();
-		SceneManager.LoadScene("CharSelectScreen");
+		SceneManager.LoadScene("CharSelect Screen");
 	}
 	
 	public void LoadArena()
 	{
 		this.gameManagerScript.PlayButtonClip();
-		SceneManager.LoadScene("Air Arena");
+		this.gameManagerScript.StartGame();
+		//SceneManager.LoadScene("Air Arena");
 	}
 	
 	public void LoadControls()
@@ -70,6 +71,7 @@ public class ButtonScript : MonoBehaviour
 	
 	public void Quit()
 	{
+		this.gameManagerScript.PlayButtonClip();
 		Application.Quit();
 	}
 	

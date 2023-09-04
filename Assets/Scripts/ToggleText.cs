@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 
 // script to change text of sound and save point toggle buttons to match settings
+// this script runs once a scene loads, ensures correct text is shown
 public class ToggleText : MonoBehaviour
 {
 	private GameManager gameManagerScript;
@@ -19,22 +20,22 @@ public class ToggleText : MonoBehaviour
 		{
 			if(gameManagerScript.getVolume())
 			{
-				textComponent.text = "SOUND ON";
+				textComponent.text = "Sound ON";
 			}
 			else
 			{
-				textComponent.text = "SOUND OFF";
+				textComponent.text = "Sound OFF";
 			}
 		}
 		else if(gameObject.name == "SavePointButton")
 		{
 			if(gameManagerScript.getSavePointsEnabled())
 			{
-				textComponent.text = "SAVE POINTS ON";
+				textComponent.text = "Save Points ON";
 			}
 			else
 			{
-				textComponent.text = "SAVE POINTS OFF";
+				textComponent.text = "Save Points OFF";
 			}
 		}
     }

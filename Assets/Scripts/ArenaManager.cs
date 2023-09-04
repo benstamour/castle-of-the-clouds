@@ -71,8 +71,13 @@ public class ArenaManager : MonoBehaviour
 			
 			if(gameManagerScript.getSavePointsEnabled() == false) // if save points are turned off, remove them
 			{
-				GameObject savePoints = GameObject.Find("SavePoints");
+				GameObject savePoints = GameObject.Find("Save Points");
 				savePoints.SetActive(false);
+			}
+			
+			if(gameManagerScript.getCurArenaMusic() > 0)
+			{
+				gameManagerScript.triggerMainArenaMusic();
 			}
 		}
 		else
@@ -84,6 +89,15 @@ public class ArenaManager : MonoBehaviour
 			for(int i = 0; i <= spawnID; i++)
 			{
 				this.savePoints[i].SetActive(false);
+			}
+			
+			if(gameManagerScript.getCurArenaMusic() > 0 && spawnID < 2) // second arena soundtrack starts at save point 2
+			{
+				gameManagerScript.triggerMainArenaMusic();
+			}
+			else if(gameManagerScript.getCurArenaMusic() > 1 && spawnID < 3) // third arena soundtrack starts just after save point 3
+			{
+				gameManagerScript.triggerTreeMusic();
 			}
 		}
 		
