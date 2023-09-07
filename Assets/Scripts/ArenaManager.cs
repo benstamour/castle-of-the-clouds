@@ -11,6 +11,12 @@ public class ArenaManager : MonoBehaviour
 	public GameObject gavaanPrefab;
 	public GameObject xaleriePrefab;
 	
+	// orb prefabs
+	public GameObject blueOrbPrefab;
+	public GameObject pinkOrbPrefab;
+	public GameObject greenOrbPrefab;
+	public GameObject purpleOrbPrefab;
+	
 	private GameManager gameManagerScript;
 	private string character;
 	
@@ -36,11 +42,8 @@ public class ArenaManager : MonoBehaviour
 	
 	//public int curOrbID = 0; // for instantiating orbs to ensure each has unique ID
 	
-    // Start is called before the first frame update
-    void Start()
-    {
-		// disable pause screen and make sure scene is not paused
-		this.pauseScreen.enabled = false;
+	void Awake()
+	{
 		Time.timeScale = 1;
 		
 		this.gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
@@ -123,35 +126,60 @@ public class ArenaManager : MonoBehaviour
 		
 		// instantiates chosen character at starting location
 		GameObject charPrefab;
+		GameObject orbPrefab;
 		switch(this.character)
 		{
 			case "Seraz":
 			{
 				charPrefab = serazPrefab;
+				orbPrefab = greenOrbPrefab;
 				break;
 			}
 			case "Aesta":
 			{
 				charPrefab = aestaPrefab;
+				orbPrefab = purpleOrbPrefab;
 				break;
 			}
 			case "Gavaan":
 			{
 				charPrefab = gavaanPrefab;
+				orbPrefab = blueOrbPrefab;
 				break;
 			}
 			case "Xalerie":
 			{
 				charPrefab = xaleriePrefab;
+				orbPrefab = pinkOrbPrefab;
 				break;
 			}
 			default:
 			{
 				charPrefab = gavaanPrefab;
+				orbPrefab = blueOrbPrefab;
 				break;
 			}
 		}
+		//foreach(GameObject orb in orbs)
+		for(int i = 0; i < this.orbs.Length; i++)
+		{
+			GameObject orb = this.orbs[i];
+			//Transform transform = orb.transform;
+			Vector3 position = orb.transform.position;
+			this.orbs[i] = Instantiate(orbPrefab, position, Quaternion.identity);
+			//GameObject newOrb = Create(orbPrefab, position, i);
+			//Collectible newOrbScript = newOrb.GetComponent<Collectible>();
+			//newOrbScript.setID(i);
+			orb.SetActive(false);
+		}
 		Instantiate(charPrefab, startLoc, Quaternion.Euler(0,yRot,0));
+	}
+	
+    // Start is called before the first frame update
+    void Start()
+    {
+		// disable pause screen and make sure scene is not paused
+		this.pauseScreen.enabled = false;
     }
 
     // Update is called once per frame

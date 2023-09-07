@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 	public void addSavePointTime(float time)
 	{
 		this.savePointTime = this.savePointTime + time;
-		Debug.Log(this.savePointTime);
+		//Debug.Log(this.savePointTime);
 	}
 	public void setSavePointTime(float time)
 	{
@@ -136,6 +136,7 @@ public class GameManager : MonoBehaviour
 	
 	public void StartGame()
 	{
+		this.spawnPoint = -1;
 		SceneManager.LoadScene("Air Arena");
 		
 		// play arena soundtrack
@@ -253,7 +254,7 @@ public class GameManager : MonoBehaviour
 	public void addSavePointScore(int num)
 	{
 		this.score += num;
-		Debug.Log(num.ToString() + " " + this.score.ToString());
+		//Debug.Log(num.ToString() + " " + this.score.ToString());
 	}
 	
 	IEnumerator CheckArenaLoaded()

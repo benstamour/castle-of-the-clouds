@@ -5,18 +5,29 @@ using UnityEngine;
 // script for the collectible orbs
 public class Collectible : MonoBehaviour
 {
-	[SerializeField] private int id; // unique ID of collectible
+	[SerializeField] private int id = -1; // unique ID of collectible
 	private int rotation = 0;
 	private float sum = 0f;
 	private GameManager gameManagerScript;
 	private ArenaManager arenaManagerScript;
 	//private int id = -1;
 	
-    // Start is called before the first frame update
+	// Start is called before the first frame update
     void Start()
     {
 		this.gameManagerScript = GameObject.Find("GameManager").GetComponent<GameManager>();
 		this.arenaManagerScript = GameObject.Find("ArenaManager").GetComponent<ArenaManager>();
+		
+		for(int i = 0; i < this.arenaManagerScript.orbs.Length; i++)
+		{
+			if(gameObject.transform.parent.position == this.arenaManagerScript.orbs[i].transform.position)
+			{
+				this.id = i;
+				break;
+			}
+		}
+		//Debug.Log(this.id);
+		
 		//this.id = this.arenaManagerScript.curOrbID; // unique ID to identify which orbs have been collected
 		//this.arenaManagerScript.incrementCurOrbID(); // ensure no other orb has same ID
 		if(this.gameManagerScript.getOrbCollected(this.id)) // if orb has already been collected by player, remove it
@@ -76,10 +87,10 @@ public class Collectible : MonoBehaviour
 		}
 	}
 	
-	/*public void setID(int id)
+	public void setID(int id)
 	{
 		this.id = id;
-	}*/
+	}
 	public int getID()
 	{
 		return this.id;
