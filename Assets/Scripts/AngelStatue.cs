@@ -116,7 +116,7 @@ public class AngelStatue : MonoBehaviour
 	{
 		this.angelTriggered = true;
 		eyeMaterial.SetFloat("_Translucency", 15);
-		StartCoroutine(disperseFog());
+		//StartCoroutine(disperseFog());
 	}
 	
 	IEnumerator disperseFog()
